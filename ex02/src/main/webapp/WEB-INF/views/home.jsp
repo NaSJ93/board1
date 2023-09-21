@@ -10,7 +10,7 @@
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P> 이 서버의 현재시간 The time on the server is ${serverTime}. </P>
 <a href="board/list">이동</a><br>
 1.게시글 목록 숫자 변경 기능<br>
 2.총 게시물 수<br>
