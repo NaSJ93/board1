@@ -1,6 +1,5 @@
 package org.zerock.controller;
 
-import java.util.Date;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,6 +45,11 @@ public class BoardController {		//211p
 		rttr.addFlashAttribute("result", vo.getBno()); //why? 데이터(작성글번호) 한번만 전송
 		return "redirect:/board/list";	//why? redirect (새로고침으로 도배 방지) 
 	}									//redirect가 없으면 jsp이고, 있으면 요청
+	
+	@PostMapping("/pw")
+	public String pw() {
+		return "/board/pw";
+	}
 	
 	@GetMapping("/good")
 	public String good(Long bno,Criteria cri) {
