@@ -57,4 +57,9 @@ public class BoardSeviceTests {			//여기까지 209p
 	public void TestCount() {
 		log.info(service.count(new Criteria()));
 	}
+	
+	@Test
+	public void TestDate() {
+		log.info(service.date());
+	}
 }

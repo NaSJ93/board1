@@ -46,11 +46,6 @@ public class BoardController {		//211p
 		return "redirect:/board/list";	//why? redirect (새로고침으로 도배 방지) 
 	}									//redirect가 없으면 jsp이고, 있으면 요청
 	
-	@PostMapping("/pw")
-	public String pw() {
-		return "/board/pw";
-	}
-	
 	@GetMapping("/good")
 	public String good(Long bno,Criteria cri) {
 		log.info("좋아요 입력 요청 url");
