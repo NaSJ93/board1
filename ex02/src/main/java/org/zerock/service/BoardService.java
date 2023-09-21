@@ -1,5 +1,6 @@
 package org.zerock.service;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -32,5 +33,7 @@ public interface BoardService {	//198p
 		
 	//좋아요 갯수
 	Long countGood(Long bno);
+	
+	Date date();
 	
 }

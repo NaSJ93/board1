@@ -32,9 +32,8 @@ public class BoardController {		//211p
 		model.addAttribute("pageMaker", new PageDTO(cri, service.count(cri))); //페이지바 정보
 		model.addAttribute("count", service.count(cri));		
 		model.addAttribute("start", new Criteria());
-		Date date=new Date();
-		log.info(date);
-		model.addAttribute("date", date);
+		log.info(service.date());
+		model.addAttribute("date", service.date());
 		//-->board.list.jsp
 	}
 	
