@@ -3,6 +3,7 @@
 
  <form action="/board/list" method="get">
  비밀번호<br>
- <input type="password" value="확인"> 
+ <input type="password"> 
+ <input type="submit" value="확인">
  </form>
  
