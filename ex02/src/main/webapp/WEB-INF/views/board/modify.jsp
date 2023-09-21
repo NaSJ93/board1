@@ -88,7 +88,7 @@
 				}
     		}
     		if(operation==="remove"){
-    			formObj.attr("action","/board/remove");
+    			formObj.attr("action","/board/pw");
     			//formObj.submit();	//submit 전송
     		}else if(operation==="list"){
     			self.location="/board/list";	//이건 post가 아닌 get이라서
