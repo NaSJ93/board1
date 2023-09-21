@@ -27,7 +27,7 @@
 							<option value="100"<c:if test='${pageMaker.cri.amount=="100"}'>selected</c:if>>100</option>
 							</select> 
 							<input type="submit" value="변경" id="pageN">
-							<a href="register">(게시글 쓰기)</a>
+							<a href="register">(게시글 쓰기)</a>현재시간:${date}
 						</form>
 						</div>
 						</div>

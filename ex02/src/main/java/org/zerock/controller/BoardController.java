@@ -1,5 +1,7 @@
 package org.zerock.controller;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +32,9 @@ public class BoardController {		//211p
 		model.addAttribute("pageMaker", new PageDTO(cri, service.count(cri))); //페이지바 정보
 		model.addAttribute("count", service.count(cri));		
 		model.addAttribute("start", new Criteria());
+		Date date=new Date();
+		log.info(date);
+		model.addAttribute("date", date);
 		//-->board.list.jsp
 	}
 	
