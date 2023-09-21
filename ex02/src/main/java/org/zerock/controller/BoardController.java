@@ -59,10 +59,9 @@ public class BoardController {		//211p
 	}	
 	
 	//	@GetMapping({"/register","/remove"})		거듭된 기능 추가로 뭔가 많이 바뀜
-	@GetMapping("/remove")
-	public void register(Long bno,Model model,Criteria cri) {
-		model.addAttribute("board", service.get(bno));
-		model.addAttribute("cri", cri);
+	@GetMapping("/remove")	//비번 화면 요청
+	public void remove(Long bno,Model model) {
+		model.addAttribute("bno", bno);
 	}
 	
 	@GetMapping("/modify")
@@ -84,13 +83,19 @@ public class BoardController {		//211p
 	
 	//삭제(글번호-bno) /board/remove (post)	<- 입력화면(get)
 	@PostMapping("/remove")
-	public String remove(Long bno,RedirectAttributes rttr,Criteria cri) {
+	public String remove(Long bno,RedirectAttributes rttr,String pw) {
 		log.info("삭제 url 요청");
-		if(service.remove(bno)) {	//이상 없으면 result란 이름으로 success라는 문자 전송
-			rttr.addFlashAttribute("oper", "remove");
-			rttr.addFlashAttribute("result", bno);
+		log.info("입력된 패스워드:"+ pw);
+		if(pw.equals("1234")) { 
+			if(service.remove(bno)) {	//이상 없으면 result란 이름으로 success라는 문자 전송
+				rttr.addFlashAttribute("oper", "remove");
+				rttr.addFlashAttribute("result", bno);
+			}
+			return "redirect:/board/list";
+		}else {
+			rttr.addFlashAttribute("flag", "fail");
+			return "redirect:/board/remove?bno="+bno;
 		}
-		return "redirect:/board/list?pageNum="+cri.getPageNum()+"&amount="+cri.getAmount();
 	}
 	/*
 	@GetMapping("/remove")
