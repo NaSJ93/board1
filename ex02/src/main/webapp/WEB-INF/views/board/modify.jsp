@@ -40,7 +40,7 @@
                                             <textarea class="form-control" rows="3" name="content" id="content">${board.content}</textarea>
                                         </div>   
                                         <button type="button" class="btn btn-default" data-oper="modify">수정하기</button>
-                                        <button type="button" class="btn btn-warning" data-oper="remove">삭제하기</button> 
+                                        <button type="button" class="btn btn-warning" data-oper="remove" onclick="pw()" id="pw">삭제하기</button> 
                                         <button type="button" class="btn btn-primary" data-oper="list">목록으로</button>
                                     </form>
                                 </div>
